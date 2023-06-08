@@ -1,0 +1,65 @@
+<div class="container">
+    <header
+        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+        <div class="col-md-3 mb-2 mb-md-0">
+            <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+              <h3>Reports</h3>  
+            </a>
+        </div>
+
+        
+    </header>
+
+<div class="row gy-2 gx-3 mt-5 mb-4 align-items-center">
+    <div class="col-sm-2">
+        <div class="form-group">
+            <label class="form-label pt-0" for="searchValue">Search By</label>
+            <div class="form-control-wrap">
+                <div class="form-control-select">
+                    <select class="form-control" id="searchBy" [(ngModel)]="searchBy" (change)="searchByListener()">
+                        <option value="COLL">Collectors</option>
+                        <option value="DR" selected class="fs-6">Date Range</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-container *ngIf="searchBy ==='COLL' ">
+        <div class="col-sm-3">
+            <div class="form-group">
+                <label class="form-label pt-0" for="searchValue">{{searchByLabel}}</label>
+                    <div class="form-control-wrap">
+                        <ng-select id="searchValue" [(ngModel)]="searchValue" [clearable]="false">
+                            <ng-option value="" selected class="fs-6">Select One</ng-option>
+                            <ng-option *ngFor="let data of listOfCollectors" [value]="data.collectorId">
+                                {{data.collectorName}}
+                            </ng-option>
+                        </ng-select>
+                    </div>
+            </div>
+        </div>
+    </ng-container>
+    <div class="col-auto">
+        <div class="form-control-wrap">
+            <div class="form-group">
+                <label class="form-label pt-0" for="startDate">Start Date</label><br />
+                <p-calendar styleClass=”form-control” dateFormat="dd-mm-yy" [showIcon]="true" [(ngModel)]="startDate">
+                </p-calendar>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-2">
+        <label class="form-label pt-0" for="endDate">End Date</label><br />
+        <p-calendar styleClass=”form-control” dateFormat="dd-mm-yy" [showIcon]="true" [(ngModel)]="endDate">
+        </p-calendar>
+    </div>
+
+    <div class="col-auto">
+        <button class="btn btn-dim btn-primary mt-4" type="button" title="" (click)="fetchCustomers()">
+            Export
+        </button>
+    </div>
+
+</div>
+</div>
+

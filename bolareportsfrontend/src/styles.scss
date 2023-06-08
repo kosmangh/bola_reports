@@ -1,0 +1,74 @@
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+a {
+  cursor: pointer;
+}
+.p-datatable.p-datatable-sm .p-datatable-thead > tr > th {
+  color: #212529;
+  font-size: 13.5px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
+
+.p-datatable .p-sortable-column .p-sortable-column-icon {
+  color: #212529;
+  margin-left: 0.5rem;
+  font-size: 11px;
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+  text-align: left;
+  border: solid #f4f4f5;
+  border-width: 0 0 1px;
+  padding: 1rem 1.5 rem;
+  font-size: small;
+}
+
+.btn.disabled,
+.btn:disabled,
+fieldset:disabled {
+  pointer-events: painted;
+  opacity: 0.65;
+  cursor: not-allowed !important;
+}
+
+.p-calendar {
+  position: relative;
+  display: inline-flex;
+  height: 35px;
+}
+
+//adjust the width and height
+.p-datepicker table td > span {
+  width: 90% !important;
+  height: 90% !important;
+  // height: 100%;
+}
+.p-button,
+.p-button:hover {
+  color: #333;
+  background: #ececec;
+  border: 1px solid #ececec;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: none;
+  border-radius: 0.375rem;
+}
+.p-button {
+  color: #333 !important;
+  background: #e5e9f2 !important;
+  border: 1px solid #e5e9f2 !important;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s,
+    box-shadow 0.2s;
+  border-radius: 6px;
+}
+.special-tool-tip {
+  position: relative;
+  border-bottom: 1px dotted black;
+}
+.special-tool-tip:hover {
+  cursor: pointer;
+}
+
